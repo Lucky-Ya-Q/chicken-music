@@ -1,3 +1,4 @@
+const path = require('path')
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
   transpileDependencies: true,
@@ -5,7 +6,10 @@ module.exports = defineConfig({
   pluginOptions: {
     'style-resources-loader': {
       preProcessor: 'scss',
-      patterns: []
+      patterns: [
+        path.resolve(__dirname, './src/assets/scss/variable.scss'),
+        path.resolve(__dirname, './src/assets/scss/mixin.scss')
+      ]
     }
   }
 })
